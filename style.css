@@ -137,7 +137,6 @@ section h2 {
 
 .container li {
   margin-top: 15px;
-  visibility: visible;
 }
 
 .skill-info {
@@ -187,6 +186,96 @@ section h2 {
   background-color: #c084fc;
 }
 
+.projet {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+
+  width: 950px;
+  margin: 80px auto;
+}
+
+article {
+  margin: 10px 0;
+  border: 1px solid #2b3139;
+  background-color: #21262d;
+  border-radius: 20px;
+  text-align: left;
+  padding: 20px;
+  width: 100%;
+  max-width: 450px;
+}
+
+article img {
+  width: 100%; /* ToDo essayer avec 200px */
+  height: auto;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+article p {
+  width: 90%;
+  color: #9ca3af;
+}
+
+article ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 0;
+  gap: 10px;
+}
+
+article li {
+  padding: 10px 3%;
+  margin-right: 20px;
+  margin-bottom: 15px;
+  border: 1px solid #2b3139;
+  background-color: #1a1f2b;
+  border-radius: 90px;
+}
+
+article a {
+  display: inline-block;
+  font-size: 0.8rem;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 90px;
+
+  color: #f9fafa;
+  background: transparent;
+  border: 2px solid #00bfff;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.7), 0 0 20px rgba(0, 191, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+article a:hover {
+  background-color: #00bfff;
+  color: #ffffff;
+  box-shadow: 0 0 15px rgba(0, 191, 255, 1), 0 0 30px rgba(0, 191, 255, 0.7);
+  transform: translateY(-2px);
+}
+
+/* article a {
+  color: #00a2ff;
+  border: 1px solid #00a2ff;
+  background: transparent;
+  padding: 6px 14px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+article a:hover {
+  background-color: #00a2ff;
+  color: white;
+  box-shadow: 0 0 15px #00a2ff;
+} */
+
 @keyframes bounce {
   0%,
   100% {
@@ -196,3 +285,7 @@ section h2 {
     transform: translateX(-50%) translateY(8px);
   }
 }
+
+/* ToDo faire le svg pour mon nom prénom */
+/* todo faire un svg pour le bouton voir mon travail aussi */
+/* todo faire l'effet sur le bords des cartes des projets -> gemini */
