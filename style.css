@@ -101,7 +101,7 @@ section {
 }
 
 section h2 {
-  padding-top: 50px;
+  padding-top: 80px;
   font-size: 1.875rem;
 }
 
@@ -115,7 +115,7 @@ section h2 {
   display: flex;
   flex-direction: column;
   background-color: #21262d;
-  margin-top: 50px;
+  margin-top: 80px;
   width: 50vh;
   border-radius: 10px;
 }
@@ -186,9 +186,10 @@ section h2 {
   background-color: #c084fc;
 }
 
-.projet {
-  margin-top: 50px;
+.projet,
+.moi {
   display: grid;
+  gap: 10px;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
 
@@ -198,10 +199,11 @@ section h2 {
 
   width: 950px;
   margin: 80px auto;
+  margin-bottom: 0px;
+  padding-bottom: 80px;
 }
 
 article {
-  margin: 10px 0;
   border: 1px solid #2b3139;
   background-color: #21262d;
   border-radius: 20px;
@@ -211,14 +213,14 @@ article {
   max-width: 450px;
 }
 
-article img {
+.projet article img {
   width: 100%; /* ToDo essayer avec 200px */
   height: auto;
   border-radius: 10px;
   margin: 10px 0;
 }
 
-article p {
+.projet article p {
   width: 90%;
   color: #9ca3af;
 }
@@ -230,7 +232,7 @@ article ul {
   gap: 10px;
 }
 
-article li {
+.projet article li {
   padding: 10px 3%;
   margin-right: 20px;
   margin-bottom: 15px;
@@ -239,7 +241,7 @@ article li {
   border-radius: 90px;
 }
 
-article a {
+.projet article a {
   display: inline-block;
   font-size: 0.8rem;
   text-decoration: none;
@@ -253,12 +255,51 @@ article a {
   transition: all 0.3s ease;
 }
 
-article a:hover {
+.projet article a:hover {
   background-color: #00bfff;
   color: #ffffff;
   box-shadow: 0 0 15px rgba(0, 191, 255, 1), 0 0 30px rgba(0, 191, 255, 0.7);
   transform: translateY(-2px);
 }
+
+#moi {
+  background-color: #0d1117;
+}
+
+.moi-card-border {
+  padding: 2px;
+  background: linear-gradient(120deg, #63a3fa, #c084fc);
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(99, 163, 250, 0.1),
+    0 0 25px rgba(192, 132, 252, 0.05);
+  display: flex;
+}
+
+#moi article {
+  padding: 25px;
+  border: none;
+  border-radius: 18px;
+  flex-grow: 1;
+}
+
+.moi {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto);
+}
+
+.moi ul {
+  padding-left: 20px;
+}
+
+.moi li {
+  list-style-type: disc;
+  border: none;
+  background-color: #21262d;
+  color: #9ca3af;
+  line-height: 1.5;
+}
+
+/* bg color #0D1117 */
 
 /* article a {
   color: #00a2ff;
@@ -288,4 +329,4 @@ article a:hover {
 
 /* ToDo faire le svg pour mon nom prénom */
 /* todo faire un svg pour le bouton voir mon travail aussi */
-/* todo faire l'effet sur le bords des cartes des projets -> gemini */
+/* todo faire l'effet sur le bords des cartes des projets -> gemini + essayer de faire avec :hover un truc qui fait bouger les éclats de blancs*/
