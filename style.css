@@ -100,7 +100,8 @@ section {
   text-align: center;
 }
 
-section h2 {
+section h2,
+footer h2 {
   padding-top: 80px;
   font-size: 1.875rem;
 }
@@ -297,6 +298,65 @@ article ul {
   background-color: #21262d;
   color: #9ca3af;
   line-height: 1.5;
+}
+
+footer {
+  background-color: #2b3139;
+  text-align: center;
+}
+
+footer h2,
+footer label,
+.btn {
+  color: #f9fafa;
+}
+
+footer p {
+  padding: 2em 0;
+  color: #9ca3af;
+}
+
+footer form {
+  padding-bottom: 5em;
+}
+
+footer label {
+  padding-top: 20px;
+}
+
+footer input {
+  display: block;
+  margin: 0 auto;
+  background-color: #1f2937;
+  padding: 1em 0;
+  border-radius: 10px;
+  width: 40%;
+  margin-bottom: 2em;
+  margin-top: 5px;
+}
+
+footer #message {
+  padding: 4em 0;
+}
+
+footer .btn {
+  width: 40%;
+  padding: 1em 0;
+  background: linear-gradient(120deg, #63a3fa, #c084fc);
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+footer ul {
+  display: flex;
+  justify-content: center;
+  gap: 5em;
+  padding-bottom: 2em;
+}
+
+footer ul i {
+  color: #f9fafa;
 }
 
 /* bg color #0D1117 */
