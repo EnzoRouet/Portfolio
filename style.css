@@ -7,6 +7,10 @@
   list-style-type: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 header {
   background-image: url(./img/Bg\ Header.png);
   min-height: 100vh;
@@ -168,23 +172,26 @@ footer h2 {
   height: 100%;
   background-color: #63a3fa;
   border-radius: 4px;
+
+  width: 0;
+  transition: width 1.2s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.bar-level-0 {
+.bar-level-0.is-visible {
   width: 0;
 }
 
-.bar-level-1 {
+.bar-level-1.is-visible {
   width: 15%;
 }
 
-.bar-level-2 {
+.bar-level-2.is-visible {
   width: 30%;
 }
-.bar-level-3 {
+.bar-level-3.is-visible {
   width: 60%;
 }
-.bar-level-4 {
+.bar-level-4.is-visible {
   width: 90%;
 }
 
@@ -334,12 +341,14 @@ footer label {
   padding-top: 20px;
 }
 
-footer input {
+footer input,
+footer textarea {
   display: block;
   margin: 0 auto;
   background-color: #1f2937;
   color: #f9fafa;
   padding: 1em 0;
+  height: 3em;
   border-radius: 10px;
   width: 40%;
   margin-bottom: 2em;
@@ -347,7 +356,7 @@ footer input {
 }
 
 footer #message {
-  padding: 4em 0;
+  height: 10rem;
 }
 
 footer .btn {

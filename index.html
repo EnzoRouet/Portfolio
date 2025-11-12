@@ -10,10 +10,6 @@
     />
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
-    <script
-      src="https://kit.fontawesome.com/14ad2ce228.js"
-      crossorigin="anonymous"
-    ></script>
   </head>
   <body>
     <header>
@@ -43,6 +39,11 @@
       <a href="#expertise" id="animation">
         <span id="arrow"><i class="fa-solid fa-arrow-down"></i></span>
       </a>
+
+      <!-- <span class="floating js"></span>
+      <span class="floating html"> </span>
+      <span class="floating css"></span>
+      <span class="floating"></span> -->
     </header>
     <main>
       <section id="expertise">
@@ -151,68 +152,75 @@
       <section>
         <h2>Mes projets académiques et personnels</h2>
         <div class="projet">
-          <article>
-            <h3>Maquette d'un site statique responsive</h3>
-            <img src="./img/Responsive.png" alt="Photo de site Responsive" />
-            <p>
-              Projet personnel réalisé afin d'améliorer mes compétences
-              d'intégration d'une maquette avec HTML, CSS flexbox et responsive
-            </p>
+          <div class="projet-card-border">
+            <article>
+              <h3>Maquette d'un site statique responsive</h3>
+              <img src="./img/Responsive.png" alt="Photo de site Responsive" />
+              <p>
+                Projet personnel réalisé afin d'améliorer mes compétences
+                d'intégration d'une maquette avec HTML, CSS flexbox et
+                responsive
+              </p>
 
-            <ul>
-              <li>HTML</li>
-              <li>CSS</li>
-            </ul>
+              <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+              </ul>
 
-            <a href="#">Voir le code Github</a>
-          </article>
+              <a href="#">Voir le code Github</a>
+            </article>
+          </div>
 
-          <article>
-            <h3>Maquette d'un site statique intéractif</h3>
-            <img src="./img/Pop-up.png" alt="Phto de site avec pop-up" />
-            <p>
-              Projet personnel pour m'entraîner à la maitrise du DOM avec des
-              animations et un pop-up qui apparait une fois le site entièrement
-              scrollé
-            </p>
+          <div class="projet-card-border">
+            <article>
+              <h3>Maquette d'un site statique intéractif</h3>
+              <img src="./img/Pop-up.png" alt="Phto de site avec pop-up" />
+              <p>
+                Projet personnel pour m'entraîner à la maitrise du DOM avec des
+                animations et un pop-up qui apparait une fois le site
+                entièrement scrollé
+              </p>
 
-            <ul>
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JavaScript</li>
-            </ul>
+              <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+              </ul>
 
-            <a href="#">Voir le code Github</a>
-          </article>
+              <a href="#">Voir le code Github</a>
+            </article>
+          </div>
 
-          <article>
-            <h3>Maquette d'un calculateur de date</h3>
-            <img
-              src="./img/Date-Calculator.png"
-              alt="Photo du site de date Date-Calculator"
-            />
-            <p>
-              Projet personnel réalisé afin d'améliorer la maitrise du DOM et
-              des évènement dynamiques. Avec un calcul automatique des prix
-              suivant la sélection des dates
-            </p>
+          <div class="projet-card-border">
+            <article>
+              <h3>Maquette d'un calculateur de date</h3>
+              <img
+                src="./img/Date-Calculator.png"
+                alt="Photo du site de date Date-Calculator"
+              />
+              <p>
+                Projet personnel réalisé afin d'améliorer la maitrise du DOM et
+                des évènement dynamiques. Avec un calcul automatique des prix
+                suivant la sélection des dates
+              </p>
 
-            <ul>
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JavaScript</li>
-            </ul>
+              <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+              </ul>
 
-            <a href="#">Voir le code Github</a>
-          </article>
+              <a href="#">Voir le code Github</a>
+            </article>
+          </div>
 
           <article>
             <h3>Maquette d'un site de gestion de tâches</h3>
             <img src="./img/ToDO-list.png" alt="Photo de site ToDo-list" />
             <p>
-              Une To-Do List simple qui sauvegarde vos tâches dans le
-              navigateur. C'était un excellent exercice pour maîtriser la
-              manipulation du DOM et le stockage local.
+              Projet personnel, une To-Do List simple qui sauvegarde vos tâches
+              dans le navigateur. C'était un excellent exercice pour maîtriser
+              la manipulation du DOM et le stockage local.
             </p>
 
             <ul>
@@ -324,7 +332,7 @@
         <input type="email" name="" id="mail" />
 
         <label for="message">Message</label>
-        <input type="text" id="message" />
+        <textarea name="message" id="message"></textarea>
 
         <button type="submit" class="btn">Envoyer le Message</button>
       </form>
@@ -345,6 +353,25 @@
       </ul>
     </footer>
 
+    <!-- <div id="map-modal" class="modal-overlay">
+      <div class="modal-content">
+        <span id="close-map" class="close-button">&times;</span>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d84883.33772863073!2d2.191262848632812!3d48.172404000000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e5b1fd979146c1%3A0x40b82c3688b3d00!2s45300%20Pithiviers!5e0!3m2!1sfr!2sfr!4v1731348004246!5m2!1sfr!2sfr"
+          width="500"
+          height="500"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div> -->
+
+    <script
+      src="https://kit.fontawesome.com/14ad2ce228.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="./index.js"></script>
   </body>
 </html>
