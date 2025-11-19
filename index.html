@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Enzo Rouet - Développeur Full Stack</title>
+    <title>Enzo Rouet | Développeur Full Stack</title>
     <meta
       name="description"
-      content="Portfolio d'Enzo Rouet, développeur web en formation (B1). Découvrez mes projets en HTML, CSS, JavaScript, Python et C."
+      content="Enzo Rouet - Développeur Full Stack. Je conçois et développe des applications web modernes (JS, Python, C). Découvrez mon portfolio"
     />
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
@@ -14,7 +14,9 @@
   <body>
     <header>
       <div class="center">
-        <h1>Rouet Enzo</h1>
+        <div class="h1-wrapper">
+          <h1>Rouet Enzo</h1>
+        </div>
         <div class="flex">
           <h2>⎯⎯ Développeur Full Stack ⎯⎯</h2>
           <p>
@@ -31,8 +33,11 @@
           </ul>
         </div>
         <div class="link">
-          <a href="#" id="view">Voir Mon Travail ➝</a>
-          <a href="#">Me Contacter</a>
+          <div class="view-wrapper">
+            <a href="#projet" id="view">Voir Mon Travail ➝</a>
+            <div class="button-glow"></div>
+          </div>
+          <a href="#contact">Me Contacter</a>
         </div>
       </div>
 
@@ -149,7 +154,7 @@
           </div>
         </div>
       </section>
-      <section>
+      <section id="projet">
         <h2>Mes projets académiques et personnels</h2>
         <div class="projet">
           <div class="projet-card-border">
@@ -167,14 +172,18 @@
                 <li>CSS</li>
               </ul>
 
-              <a href="#">Voir le code Github</a>
+              <a
+                href="https://github.com/EnzoRouet/Maquette-site-static-responsive"
+                target="_blank"
+                >Voir le code Github</a
+              >
             </article>
           </div>
 
           <div class="projet-card-border">
             <article>
               <h3>Maquette d'un site statique intéractif</h3>
-              <img src="./img/Pop-up.png" alt="Phto de site avec pop-up" />
+              <img src="./img/Pop-up.png" alt="Photo de site avec pop-up" />
               <p>
                 Projet personnel pour m'entraîner à la maitrise du DOM avec des
                 animations et un pop-up qui apparait une fois le site
@@ -187,7 +196,11 @@
                 <li>JavaScript</li>
               </ul>
 
-              <a href="#">Voir le code Github</a>
+              <a
+                href="https://github.com/EnzoRouet/Maquette-site-statique-interactif"
+                target="_blank"
+                >Voir le code Github</a
+              >
             </article>
           </div>
 
@@ -210,7 +223,11 @@
                 <li>JavaScript</li>
               </ul>
 
-              <a href="#">Voir le code Github</a>
+              <a
+                href="https://github.com/EnzoRouet/Date-Calculator"
+                target="_blank"
+                >Voir le code Github</a
+              >
             </article>
           </div>
 
@@ -229,7 +246,9 @@
               <li>JavaScript</li>
             </ul>
 
-            <a href="#">Voir le code Github</a>
+            <a href="https://github.com/EnzoRouet/ToDo-List-Web" target="_blank"
+              >Voir le code Github</a
+            >
           </article>
         </div>
       </section>
@@ -312,7 +331,7 @@
         </div>
       </section>
     </main>
-    <footer>
+    <footer id="contact">
       <h2>Construisons quelque chose de magnifique ensemble</h2>
       <p>
         Que ce soit pour une opportunité, un projet, ou juste pour discuter,
@@ -336,15 +355,17 @@
         </div>
 
         <div class="footer-map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d84883.33772863073!2d2.191262848632812!3d48.172404000000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e5b1fd979146c1%3A0x40b82c3688b3d00!2s45300%20Pithiviers!5e0!3m2!1sfr!2sfr!4v1731348004246!5m2!1sfr!2sfr"
-            width="100%"
-            height="350"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
+          <div class="footer-map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21282.853450628245!2d2.2295397117498683!3d48.18047882547126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e5a50bcecb3fe9%3A0x40dc8d70537d700!2s45300%20Pithiviers!5e0!3m2!1sfr!2sfr!4v1763377082414!5m2!1sfr!2sfr"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
         </div>
       </div>
 
@@ -363,21 +384,6 @@
         </li>
       </ul>
     </footer>
-
-    <!-- <div id="map-modal" class="modal-overlay">
-      <div class="modal-content">
-        <span id="close-map" class="close-button">&times;</span>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d84883.33772863073!2d2.191262848632812!3d48.172404000000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e5b1fd979146c1%3A0x40b82c3688b3d00!2s45300%20Pithiviers!5e0!3m2!1sfr!2sfr!4v1731348004246!5m2!1sfr!2sfr"
-          width="500"
-          height="500"
-          style="border: 0"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </div>
-    </div> -->
 
     <script
       src="https://kit.fontawesome.com/14ad2ce228.js"
