@@ -31,23 +31,14 @@ if (contactForm) {
   contactForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    // Récupération des données
-    // VERIFIE BIEN QUE DANS TON HTML L'ID EST BIEN "mail" ET PAS "email"
     const name = document.getElementById("name").value;
     const email = document.getElementById("mail").value;
     const message = document.getElementById("message").value;
 
-    // --- CONFIGURATION DE L'ADRESSE DU SERVEUR ---
-    // 1. Va sur Vercel, déploie ton backend.
-    // 2. Copie l'URL qu'ils te donnent (ex: https://mon-portfolio-api.vercel.app)
-    // 3. Colle-la ci-dessous entre les guillemets :
-
-    const API_ENDPOINT = "http://localhost:3000/send-email";
-    // ⚠️ Une fois déployé, remplace la ligne du dessus par :
-    // const API_ENDPOINT = "https://ton-projet-vercel.app/send-email";
+    const API_ENDPOINT = "https://portfolio-wm61.vercel.app/send-email";
 
     formStatus.textContent = "Envoi en cours...";
-    formStatus.style.color = "#63a3fa"; // Bleu
+    formStatus.style.color = "#63a3fa";
 
     try {
       const response = await fetch(API_ENDPOINT, {
@@ -62,19 +53,19 @@ if (contactForm) {
 
       if (response.ok) {
         formStatus.textContent = "Message envoyé ! Je vous réponds très vite.";
-        formStatus.style.color = "#34d399"; // Vert
-        contactForm.reset(); // Vider le formulaire
+        formStatus.style.color = "#34d399";
+        contactForm.reset();
       } else {
         formStatus.textContent = `Erreur: ${
           result.error || "Veuillez réessayer."
         }`;
-        formStatus.style.color = "#FF6347"; // Rouge
+        formStatus.style.color = "#FF6347";
       }
     } catch (error) {
       console.error("Erreur de connexion:", error);
       formStatus.textContent =
         "Erreur de connexion au serveur (êtes-vous en ligne ?)";
-      formStatus.style.color = "#FF6347"; // Rouge
+      formStatus.style.color = "#FF6347";
     }
   });
 }
