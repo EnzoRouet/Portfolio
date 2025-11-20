@@ -8,7 +8,37 @@
       name="description"
       content="Enzo Rouet - Développeur Full Stack. Je conçois et développe des applications web modernes (JS, Python, C). Découvrez mon portfolio"
     />
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://enzorouet.github.io/Portfolio/" />
+    <meta property="og:title" content="Enzo Rouet | Développeur Full Stack" />
+    <meta
+      property="og:description"
+      content="Découvrez mon portfolio : Projets Web, Compétences (JS, Python, C) et Contact."
+    />
+    <meta
+      property="og:image"
+      content="https://enzorouet.github.io/Portfolio/img/preview.jpg"
+    />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://enzorouet.github.io/Portfolio/"
+    />
+    <meta
+      property="twitter:title"
+      content="Enzo Rouet | Développeur Full Stack"
+    />
+    <meta
+      property="twitter:description"
+      content="Découvrez mon portfolio : Projets Web, Compétences (JS, Python, C) et Contact."
+    />
+    <meta
+      property="twitter:image"
+      content="https://enzorouet.github.io/Portfolio/img/preview.jpg"
+    />
+    <!-- <link rel="icon" href=""/> -->
     <link rel="stylesheet" href="./assets/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -174,7 +204,7 @@
               <p>
                 Projet personnel réalisé afin d'améliorer mes compétences
                 d'intégration d'une maquette avec HTML, CSS flexbox et
-                responsive
+                responsive.
               </p>
 
               <ul>
@@ -192,12 +222,12 @@
 
           <div class="projet-card-border">
             <article>
-              <h3>Maquette d'un site statique intéractif</h3>
+              <h3>Maquette d'un site statique interactif</h3>
               <img src="./img/Pop-up.png" alt="Photo de site avec pop-up" />
               <p>
-                Projet personnel pour m'entraîner à la maitrise du DOM avec des
+                Projet personnel pour m'entraîner à la maîtrise du DOM avec des
                 animations et un pop-up qui apparait une fois le site
-                entièrement scrollé
+                entièrement scrollé.
               </p>
 
               <ul>
@@ -222,9 +252,9 @@
                 alt="Photo du site de date Date-Calculator"
               />
               <p>
-                Projet personnel réalisé afin d'améliorer la maitrise du DOM et
+                Projet personnel réalisé afin d'améliorer la maîtrise du DOM et
                 des évènement dynamiques. Avec un calcul automatique des prix
-                suivant la sélection des dates
+                suivant la sélection des dates.
               </p>
 
               <ul>
@@ -350,12 +380,12 @@
 
       <div class="footer-layout">
         <div class="footer-form">
-          <form action="" method="POST" id="contact-form">
+          <form method="POST" id="contact-form">
             <label for="name">Nom</label>
-            <input type="text" id="name" required />
+            <input type="text" id="name" name="name" required />
 
             <label for="mail">Email</label>
-            <input type="email" name="" id="mail" required />
+            <input type="email" name="mail" id="mail" required />
 
             <label for="message">Message</label>
             <textarea name="message" id="message" required></textarea>
@@ -366,17 +396,15 @@
         </div>
 
         <div class="footer-map">
-          <div class="footer-map">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21282.853450628245!2d2.2295397117498683!3d48.18047882547126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e5a50bcecb3fe9%3A0x40dc8d70537d700!2s45300%20Pithiviers!5e0!3m2!1sfr!2sfr!4v1763377082414!5m2!1sfr!2sfr"
-              width="600"
-              height="450"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21282.853450628245!2d2.2295397117498683!3d48.18047882547126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e5a50bcecb3fe9%3A0x40dc8d70537d700!2s45300%20Pithiviers!5e0!3m2!1sfr!2sfr!4v1763377082414!5m2!1sfr!2sfr"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
       </div>
 

@@ -7,10 +7,6 @@ const observer = new IntersectionObserver(
         bars.forEach((bar) => {
           bar.classList.add("is-visible");
         });
-      } else {
-        bars.forEach((bar) => {
-          bar.classList.remove("is-visible");
-        });
       }
     });
   },
@@ -34,8 +30,14 @@ if (contactForm) {
     const name = document.getElementById("name").value;
     const email = document.getElementById("mail").value;
     const message = document.getElementById("message").value;
+    const btn = contactForm.querySelector(".btn");
 
     const API_ENDPOINT = "https://portfolio-wm61.vercel.app/send-email";
+
+    btn.disabled = true;
+    btn.textContent = "Envoi en cours...";
+    btn.style.opacity = "0.7";
+    btn.style.cursor = "not-allowed";
 
     formStatus.textContent = "Envoi en cours...";
     formStatus.style.color = "#63a3fa";
@@ -58,18 +60,33 @@ if (contactForm) {
 
         setTimeout(() => {
           formStatus.textContent = "";
+
+          btn.disabled = false;
+          btn.textContent = "Envoyer le Message";
+          btn.style.opacity = "1";
+          btn.style.cursor = "pointer";
         }, 5000);
       } else {
         formStatus.textContent = `Erreur: ${
           result.error || "Veuillez réessayer."
         }`;
         formStatus.style.color = "#FF6347";
+
+        btn.disabled = false;
+        btn.textContent = "Envoyer le Message";
+        btn.style.opacity = "1";
+        btn.style.cursor = "pointer";
       }
     } catch (error) {
       console.error("Erreur de connexion:", error);
       formStatus.textContent =
         "Erreur de connexion au serveur (êtes-vous en ligne ?)";
       formStatus.style.color = "#FF6347";
+
+      btn.disabled = false;
+      btn.textContent = "Envoyer le Message";
+      btn.style.opacity = "1";
+      btn.style.cursor = "pointer";
     }
   });
 }
