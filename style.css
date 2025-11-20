@@ -190,6 +190,13 @@ header a {
   border-color: #6a5acd;
 }
 
+.link {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
 .link > a:hover {
   transform: translateY(-2px);
   border-color: #6a5acd;

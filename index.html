@@ -340,17 +340,18 @@
 
       <div class="footer-layout">
         <div class="footer-form">
-          <form action="">
+          <form action="" method="POST" id="contact-form">
             <label for="name">Nom</label>
-            <input type="text" id="name" />
+            <input type="text" id="name" required />
 
             <label for="mail">Email</label>
-            <input type="email" name="" id="mail" />
+            <input type="email" name="" id="mail" required />
 
             <label for="message">Message</label>
-            <textarea name="message" id="message"></textarea>
+            <textarea name="message" id="message" required></textarea>
 
             <button type="submit" class="btn">Envoyer le Message</button>
+            <p id="form-status"></p>
           </form>
         </div>
 

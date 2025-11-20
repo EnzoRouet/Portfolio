@@ -12,15 +12,16 @@ require("dotenv").config(); // Pour charger les clés secrètes
 const app = express();
 app.use(express.json()); // Permet à Express de lire le JSON envoyé par le formulaire
 
-// 3. Configurer CORS (Cross-Origin Resource Sharing)
-// TRÈS IMPORTANT : Remplace 'https://ton-portfolio.com' par l'URL de ton site en prod
-// ou '*' pour tester en local.
 app.use(
   cors({
-    origin: "https://ton-portfolio.com",
+    origin: [
+      "https://enzorouet.github.io",
+      "http://localhost:5500",
+      "http://127.0.0.1:5500",
+    ],
+    credentials: true,
   })
 );
-
 // 4. Initialiser Resend avec ta clé API secrète
 // Crée un fichier .env et mets-y ta clé : RESEND_API_KEY=re_...
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -48,9 +49,17 @@ app.post("/send-email", async (req, res) => {
         .json({ error: "Les emails temporaires ne sont pas autorisés." });
     }
 
+    const destinationEmail = process.env.EMAIL_DESTINATION;
+    if (!destinationEmail) {
+      return res
+        .status(500)
+        .json({ error: "Configuration serveur manquante." });
+    }
+
     const { data, error } = await resend.emails.send({
-      from: "Portfolio <contact@ton-domaine.com>",
-      to: ["ton-email-perso@gmail.com"],
+      from: "Portfolio <onboarding@resend.dev>",
+      to: [destinationEmail],
+      reply_to: email,
       subject: `Nouveau message de ${name} depuis le portfolio`,
       html: `
         <p><strong>Nom:</strong> ${name}</p>
@@ -74,7 +83,11 @@ app.post("/send-email", async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Serveur démarré sur le port ${PORT}`);
-});
+module.exports = app;
+
+if (require.main === module) {
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
+    console.log(`Serveur démarré sur le port ${PORT}`);
+  });
+}
