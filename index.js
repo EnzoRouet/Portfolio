@@ -55,6 +55,10 @@ if (contactForm) {
         formStatus.textContent = "Message envoyé ! Je vous réponds très vite.";
         formStatus.style.color = "#34d399";
         contactForm.reset();
+
+        setTimeout(() => {
+          formStatus.textContent = "";
+        }, 5000);
       } else {
         formStatus.textContent = `Erreur: ${
           result.error || "Veuillez réessayer."
