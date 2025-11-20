@@ -1,16 +1,10 @@
-// --- Mini-API pour Formulaire de Contact ---
-// Ce code est à exécuter sur un serveur (Node.js)
-
-// 1. Importer les dépendances
-// Tu auras besoin de faire : npm install express resend cors dotenv
 const express = require("express");
 const { Resend } = require("resend");
 const cors = require("cors");
-require("dotenv").config(); // Pour charger les clés secrètes
+require("dotenv").config();
 
-// 2. Initialiser l'app
 const app = express();
-app.use(express.json()); // Permet à Express de lire le JSON envoyé par le formulaire
+app.use(express.json());
 
 app.use(
   cors({
@@ -22,8 +16,7 @@ app.use(
     credentials: true,
   })
 );
-// 4. Initialiser Resend avec ta clé API secrète
-// Crée un fichier .env et mets-y ta clé : RESEND_API_KEY=re_...
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 app.post("/send-email", async (req, res) => {
