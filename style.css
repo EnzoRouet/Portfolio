@@ -65,6 +65,7 @@ header {
   align-items: center;
   flex-direction: column;
   position: relative;
+  background-color: black;
 }
 
 header::before {
@@ -74,7 +75,7 @@ header::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(./img/Bg_Header.webp);
+  background-image: url(./img/Bg_Header_mobile.webp);
   background-size: cover;
   background-position: center;
   background-color: rgba(0, 0, 0, 0.5);
@@ -598,6 +599,12 @@ footer ul li a:hover i {
   }
   50% {
     transform: translateX(-50%) translateY(8px);
+  }
+}
+
+@media (min-width: 1024px) {
+  header::before {
+    background-image: url(./img/Bg_Header.webp);
   }
 }
 
