@@ -3,7 +3,7 @@
 **Projet central** servant de vitrine à mes compétences techniques et à mes réalisations.
 Une plateforme web complète intégrant une interface utilisateur dynamique et un micro-service Backend pour la gestion sécurisée des communications.
 
-**Visité le site :** [https://enzorouet.github.io/Portfolio/](https://enzorouet.github.io/Portfolio/)
+**🌐 Visiter le site :** [https://enzorouet.github.io/Portfolio/](https://enzorouet.github.io/Portfolio/)
 
 ![Aperçu du Portfolio](./img/preview.webp)
 
@@ -17,16 +17,16 @@ L'objectif était de créer une expérience utilisateur fluide tout en appliquan
 
 - Développement d'une **interface Responsive** sans framework (CSS Grid & Flexbox).
 - Implémentation d'un **micro-service Backend (Node.js/Express)**.
-- Consommation d'API tierces (Resend) pour le traitement des mails.
+- Consommation d'API tierces (**Resend**) pour le traitement des mails.
 - Sécurisation des échanges via la gestion des **CORS** et des variables d'environnement (`dotenv`).
-- Déploiement multi-plateforme : Frontend sur **GitHub Pages** et Backend sur **Vercel**.
+- Déploiement hybride : Frontend sur **GitHub Pages** et Backend sur **Vercel**.
 
 ## 🛠️ Stack Technique
 
 - **Frontend :** HTML5, CSS3, JavaScript Vanilla.
 - **Backend :** Node.js, Express.js.
 - **Sécurité & Services :** API Resend, CORS, Dotenv.
-- **DevOps :** Workflow Git, Vercel (Build & Deploy).
+- **DevOps :** Workflow Git, Vercel (Serverless Functions).
 
 ## ✨ Fonctionnalités Développées
 
@@ -41,33 +41,34 @@ Développement d'une route API dédiée permettant l'envoi de messages sans expo
 
 - **Intersection Observer API :** Animation dynamique des barres de progression des compétences lors du scroll.
 - **Floating Icons :** Système de décoration en parallaxe légère pour dynamiser le header.
-- **Smooth Scrolling :** Navigation interne fluide entre les différentes sections d'expertise.
+- **Smooth Scrolling :** Navigation interne fluide entre les sections.
 
 ### 3. SEO & Open Graph
 
-Optimisation complète des meta-tags pour un référencement efficace et une présentation propre lors du partage sur les réseaux sociaux (LinkedIn, Twitter).
+Optimisation des meta-tags pour un référencement efficace et une présentation propre lors du partage sur les réseaux sociaux (LinkedIn, Twitter).
 
-## 🏗️ Architecture du Code
+## 🏗️ Architecture du Code & Déploiement
 
-Le projet sépare distinctement le client et le serveur :
+Le projet sépare distinctement le client et le serveur pour répondre aux contraintes du Cloud moderne :
 
-- **`/assets` & `index.html` :** Partie statique optimisée pour la vitesse de chargement.
-- **`server.js` :** Point d'entrée du backend Express gérant les requêtes POST.
-- **`vercel.json` :** Configuration du déploiement serverless pour les fonctions Node.js.
+- **Frontend :** Hébergé sur GitHub Pages pour une disponibilité maximale.
+- **Backend Serverless :** Contrairement à un serveur Node.js traditionnel "toujours actif", le backend a été configuré pour le **Serverless Computing** sur Vercel.
+- **Optimisation :** Le code est exporté en tant que module, permettant à Vercel de l'exécuter uniquement lors des appels API, réduisant ainsi la consommation de ressources.
 
 ## 🧠 Challenges Techniques Résolus
 
-### La communication Cross-Origin (CORS)
+### Migration vers une Architecture Serverless
 
-Lors du déploiement, le frontend (GitHub Pages) et le backend (Vercel) se trouvaient sur des domaines différents, bloquant les requêtes de formulaire.
+Vercel n'acceptant pas les serveurs Express classiques en exécution continue, j'ai dû adapter mon point d'entrée (`server.js`).
 
-- _Solution :_ Configuration fine du middleware `cors` pour autoriser uniquement les requêtes provenant de mon domaine de portfolio, garantissant sécurité et interopérabilité.
+- **Le problème :** Les routes Express ne sont pas nativement comprises par l'infrastructure serverless sans un bridge de configuration.
+- **La solution :** Implémentation d'un export de l'application (`module.exports = app`) et configuration du fichier `vercel.json` pour router les requêtes vers des fonctions éphémères.
 
-### Gestion de l'état du formulaire (UX)
+### Communication Cross-Origin (CORS)
 
-Il fallait éviter les envois multiples et informer l'utilisateur de l'avancement de sa requête.
+Le frontend et le backend se trouvant sur des domaines différents, les requêtes étaient initialement bloquées par le navigateur.
 
-- _Solution :_ Utilisation d'états visuels dynamiques en JS (désactivation du bouton, changement de texte, retour d'erreur coloré) pour guider l'utilisateur durant l'appel asynchrone à l'API.
+- **La solution :** Configuration rigoureuse du middleware `cors` pour autoriser uniquement mon domaine GitHub Pages, protégeant ainsi l'API contre les utilisations malveillantes tierces.
 
 ## ⚙️ Installation & Lancement
 
