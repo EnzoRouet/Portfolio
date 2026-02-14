@@ -76,9 +76,9 @@ Le frontend et le backend se trouvant sur des domaines différents, les requête
 
 1. **Cloner le projet :**
 
-   ```bash
-   git clone [https://github.com/EnzoRouet/Portfolio]
-   ```
+```bash
+git clone [https://github.com/EnzoRouet/Portfolio]
+```
 
 2. **Installer les dépendances (pour le serveur) :**
 
